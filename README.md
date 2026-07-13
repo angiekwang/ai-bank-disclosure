@@ -1,19 +1,19 @@
 # Corporate Governance and AI Disclosure in U.S. Bank 10-K Filings
 
-*A reproducible text analysis pipeline for measuring AI disclosure and AI-specific sentiment in SEC Form 10-K filings.*
+This repository contains fully replicable code for a project examining how publicly traded U.S. banks discuss artificial intelligence in annual SEC filings. The analysis focuses on Items 1, 1A, and 7 of Form 10-K filings from filing years 2020 through 2026. 
 
-# 1. Overview
+# Overview
 Emerging technologies create both extraordinary opportunities and significant uncertainty for firms. As these technologies become increasingly embedded in business operations, boards of directors are expected to oversee not only their strategic potential but also the risks they introduce. Artificial intelligence (AI), in particular, has the potential to improve productivity, fraud detection, customer service, and decision-making while simultaneously introducing challenges related to cybersecurity, model risk, operational resilience, regulation, and governance. Corporate governance research argues that boards of directors play a central role in overseeing these emerging strategic risks (Stulz, Tompkins, Williamson, & Ye, 2026).
 
 This project examines how publicly traded U.S. bank holding companies communicate AI in mandatory SEC disclosures and whether corporate governance characteristics help explain variation in those disclosures.
 
-Unlike much of the existing literature, which studies whether AI disclosure predicts firm performance or firm value (e.g., Mishra et al., 2022; Wang & Yen, 2023; Alzeghoul & Alsharari, 2024), this project focuses on the determinants of AI disclosure itself. Rather than treating AI disclosure solely as a proxy for technology adoption, I investigate whether governance characteristics are associated with the prominence of AI within banks' mandatory disclosures.
+Unlike much of the existing literature which studies whether AI disclosure predicts firm performance or firm value (e.g., Mishra et al., 2022; Wang & Yen, 2023; Alzeghoul & Alsharari, 2024), this project focuses on the determinants of AI disclosure itself. I investigate whether governance characteristics are associated with the prominence of artificial intelligence-related discussion within banks' mandatory disclosures.
 
-Although motivated by artificial intelligence, the broader goal of this project is to understand how firms communicate emerging technologies that present both substantial opportunities and strategic risks, and whether corporate governance influences those disclosure decisions.
+Although motivated by artificial intelligence, the broader goal of this project is to understand how firms communicate emerging technologies that present both opportunities and risks, and whether corporate governance influences those disclosure decisions.
 
 This repository contains a fully reproducible Python pipeline for constructing a research dataset of AI disclosure measures, AI-specific sentiment, and bank-year variables from SEC Form 10-K filings.
 
-# 2. Research Contributions
+# Research Contributions
 
 This project extends the existing literature in the following ways:
 
@@ -26,7 +26,7 @@ This project extends the existing literature in the following ways:
 - Provides a fully documented and reproducible Python workflow for SEC data collection, preprocessing, feature engineering, and text analysis.
 
 
-# 3. Methodology & Sample Construction
+# Methodology & Sample Construction
 
 The initial sample is drawn from the Federal Reserve Board's "U.S. Domestically Chartered Commercial Banks" dataset. Banks with less than $2 billion in consolidated assets are excluded.
 
@@ -43,12 +43,12 @@ For each filing, only the sections most relevant to business strategy and risk d
 
 AI disclosure is measured using two explicit AI indicators:
 
-- `"AI"` (case-sensitive)
-- `"artificial intelligen"` (capturing "artificial intelligence" and related variants)
+- "AI" (case-sensitive)
+- "artificial intelligen" (capturing "artificial intelligence" and related variants)
 
 Rather than measuring sentiment across entire filings, this project extracts localized sentence windows surrounding each AI mention and applies the Loughran–McDonald financial sentiment dictionary to construct AI-specific measures of positive, negative, uncertainty, and net sentiment.
 
-# 4. Data Sources
+# Data Sources
 
 This project combines publicly available regulatory data with financial research databases.
 
@@ -68,25 +68,25 @@ This project combines publicly available regulatory data with financial research
 This repository contains the following scripts (in order):
 | Script | Purpose |
 |---------|---------|
-| `clean_bank_list.py` | Filters FRB bank list to institutions with consolidated assets exceeding $2 billion. |
-| `link_bank_identifiers.py` | Links banks to RSSD ID, PERMCO, GVKEY, CIK, and ticker identifiers while constructing the final bank sample. |
-| `extract_10k_text.py` | Downloads Form 10-K Items 1, 1A, and 7 from the SEC EDGAR database using the EdgarTools library. |
-| `preprocess_10k_text.py` | Cleans and tokenizes filing text for subsequent frequency and sentiment analyses. |
-| `ai_frequency_analysis.py` | Measures AI disclosure frequency using keywords `"AI"` and `"artificial intelligen"`. |
-| `extract_keyword_windows.py` | Extracts sentence-level context surrounding each AI keyword occurrence. |
-| `prepare_lm_dictionary.py` | Cleans and prepares the Loughran–McDonald financial sentiment dictionary. |
-| `score_ai_sentiment.py` | Computes AI-specific positive, negative, uncertainty, and net sentiment measures from keyword context windows. |
+| clean_bank_list.py | Filters FRB bank list to institutions with consolidated assets exceeding $2 billion. |
+| link_bank_identifiers.py | Links banks to RSSD ID, PERMCO, GVKEY, CIK, and ticker identifiers while constructing the final bank sample. |
+| extract_10k_text.py | Downloads Form 10-K Items 1, 1A, and 7 from the SEC EDGAR database using the EdgarTools library. |
+| preprocess_10k_text.py | Cleans and tokenizes filing text for subsequent frequency and sentiment analyses. |
+| ai_frequency_analysis.py | Measures AI disclosure frequency using keywords "AI" and "artificial intelligen". |
+| extract_keyword_windows.py | Extracts sentence-level context surrounding each AI keyword occurrence. |
+| prepare_lm_dictionary.py | Cleans and prepares the Loughran–McDonald financial sentiment dictionary. |
+| score_ai_sentiment.py | Computes AI-specific positive, negative, uncertainty, and net sentiment measures from keyword context windows. |
 
 
 # 5. Reproduction Information
 
-Clone the repository and install the required packages:
+Clone the repository and install the required packages by running:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Before downloading SEC filings, define an SEC User Agent:
+For scraping filings using EDGAR, define an SEC user agent by running:
 
 ```bash
 export SEC_USER_AGENT="Your Name your.email@example.com"
