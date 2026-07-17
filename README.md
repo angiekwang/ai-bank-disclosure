@@ -1,8 +1,5 @@
 # Corporate Governance and AI Disclosure in U.S. Bank 10-K Filings
 
-This repository contains fully replicable code for a project examining how publicly traded U.S. banks discuss artificial intelligence in annual SEC filings. The analysis focuses on Items 1, 1A, and 7 of Form 10-K filings from filing years 2020 through 2026. 
-
-# Overview
 Emerging technologies create both extraordinary opportunities and significant uncertainty for firms. As these technologies become increasingly embedded in business operations, boards of directors are expected to oversee not only their strategic potential but also the risks they introduce. Artificial intelligence (AI), in particular, has the potential to improve productivity, fraud detection, customer service, and decision-making while simultaneously introducing challenges related to cybersecurity, model risk, operational resilience, regulation, and governance. Corporate governance research argues that boards of directors play a central role in overseeing these emerging strategic risks (Stulz, Tompkins, Williamson, & Ye, 2026).
 
 This project examines how publicly traded U.S. bank holding companies communicate AI in mandatory SEC disclosures and whether corporate governance characteristics help explain variation in those disclosures.
@@ -92,7 +89,7 @@ For scraping filings using EDGAR, define an SEC user agent by running:
 export SEC_USER_AGENT="Your Name your.email@example.com"
 ```
 
-Then execute each script in the order listed above.
+Then, execute each script in the order listed in Section 4.
 
 # References
 
