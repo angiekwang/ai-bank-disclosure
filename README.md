@@ -1,6 +1,8 @@
 # Corporate Governance and AI Disclosure in U.S. Bank 10-K Filings 
 
-This project investigates the relationship between corporate governance and public (mandatory) disclosure of risks related to artificial intelligence (AI). The scripts in this repository (updated as of August 2026) scrape 10-K filing sections from a cleaned list of publicly traded U.S. banks and perform frequency and lexicon-based sentiment analysis.
+This project investigates the relationship between corporate governance and public (mandatory) disclosure of risks related to artificial intelligence (AI). 
+
+The scripts in this repository (updated as of August 2026) scrape 10-K filing sections from a cleaned list of publicly traded U.S. banks and perform frequency and lexicon-based sentiment analysis.
 
 
 # Background
