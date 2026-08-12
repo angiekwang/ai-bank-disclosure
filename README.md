@@ -1,4 +1,11 @@
-# Corporate Governance and AI Disclosure in U.S. Bank 10-K Filings
+# Corporate Governance and AI Disclosure in U.S. Bank 10-K Filings 
+
+Project Overview: I am seeking to understand the relationship between corporate governance and public (mandatory) disclosure of risks related to artificial intelligence (AI). 
+
+The scripts in this repository (updated as of August 2026) scrape 10-K filing sections from a cleaned list of publicly traded U.S. banks and perform frequency and lexicon-based sentiment analysis.
+
+
+# Background
 
 Emerging technologies create both extraordinary opportunities and significant uncertainty for firms. As these technologies become increasingly embedded in business operations, boards of directors are expected to oversee not only their strategic potential but also the risks they introduce. Artificial intelligence (AI), in particular, has the potential to improve productivity, fraud detection, customer service, and decision-making while simultaneously introducing challenges related to cybersecurity, model risk, operational resilience, regulation, and governance. Corporate governance research argues that boards of directors play a central role in overseeing these emerging strategic risks (Stulz, Tompkins, Williamson, & Ye, 2026).
 
@@ -9,21 +16,10 @@ Unlike much of the existing literature which studies whether AI disclosure predi
 Although motivated by artificial intelligence, the broader goal of this project is to understand how firms communicate emerging technologies that present both opportunities and risks, and whether corporate governance influences those disclosure decisions.
 
 This repository contains a fully reproducible Python pipeline for constructing a research dataset of AI disclosure measures, AI-specific sentiment, and bank-year variables from SEC Form 10-K filings.
-
-# Research Contributions
-
-This project extends the existing literature in the following ways:
-
-- Examines the **determinants**, rather than the consequences, of AI disclosure.
-- Frames AI disclosure within the literature on **corporate governance and board oversight of emerging strategic risks**.
-- Constructs a reproducible panel of **1,554 SEC Form 10-K filings** from **222 publicly traded U.S. bank holding companies** spanning filing years **2020–2026**.
-- Focuses specifically on **Item 1 (Business)**, **Item 1A (Risk Factors)**, and **Item 7 (Management's Discussion and Analysis)** instead of analyzing complete annual reports.
-- Measures AI disclosure using explicit AI terminology ("AI" and "artificial intelligen") rather than broad digital transformation dictionaries.
-- Develops **AI-specific sentiment measures** by applying the Loughran–McDonald financial sentiment dictionary only to localized context surrounding AI mentions.
+ions.
 - Provides a fully documented and reproducible Python workflow for SEC data collection, preprocessing, feature engineering, and text analysis.
 
-
-# Methodology & Sample Construction
+# Sample Construction
 
 The initial sample is drawn from the Federal Reserve Board's "U.S. Domestically Chartered Commercial Banks" dataset. Banks with less than $2 billion in consolidated assets are excluded.
 
@@ -44,19 +40,6 @@ AI disclosure is measured using two explicit AI indicators:
 - "artificial intelligen" (capturing "artificial intelligence" and related variants)
 
 Rather than measuring sentiment across entire filings, this project extracts localized sentence windows surrounding each AI mention and applies the Loughran–McDonald financial sentiment dictionary to construct AI-specific measures of positive, negative, uncertainty, and net sentiment.
-
-# Data Sources
-
-This project combines publicly available regulatory data with financial research databases.
-
-| Source | Purpose |
-|---------|---------|
-| Federal Reserve Board – *U.S. Domestically Chartered Commercial Banks* | Initial bank dataset |
-| SEC Company Tickers Exchange | CIK and ticker identifiers |
-| WRDS identifier linking datasets | RSSD ID, PERMCO, and GVKEY identifier mappings |
-| SEC EDGAR | Form 10-K filings (retrieved using EdgarTools) |
-| Loughran–McDonald Financial Sentiment Dictionary (March 2026 release) | Lexicon-based sentiment analysis |
-| WRDS financial databases | Bank financial characteristics and governance variables used in regression analysis |
 
 ---
 
