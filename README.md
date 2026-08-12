@@ -16,30 +16,18 @@ Unlike much of the existing literature which studies whether AI disclosure predi
 Although motivated by artificial intelligence, the broader goal of this project is to understand how firms communicate emerging technologies that present both opportunities and risks, and whether corporate governance influences those disclosure decisions.
 
 This repository contains a fully reproducible Python pipeline for constructing a research dataset of AI disclosure measures, AI-specific sentiment, and bank-year variables from SEC Form 10-K filings.
-ions.
-- Provides a fully documented and reproducible Python workflow for SEC data collection, preprocessing, feature engineering, and text analysis.
 
 # Sample Construction
 
 The initial sample is drawn from the Federal Reserve Board's "U.S. Domestically Chartered Commercial Banks" dataset. Banks with less than $2 billion in consolidated assets are excluded.
 
-Remaining institutions are linked to publicly traded parent holding companies using SEC and WRDS identifier mapping datasets. Banks are removed from the sample if they:
-
-- are privately held,
-- are owned by foreign parent companies,
-- are subsidiaries of another publicly traded holding company,
-- or do not possess complete Form 10-K coverage for filing years 2020 through 2026.
+Remaining institutions are linked to publicly traded parent holding companies using SEC and WRDS identifier mapping datasets. Banks are removed from the sample if they are privately held, are owned by foreign parent companies, are subsidiaries of another publicly traded holding company, or do not possess complete Form 10-K coverage for filing years 2020 through 2026.
 
 The final sample consists of __ publicly traded U.S. bank holding companies and __ SEC Form 10-K filings.
 
 For each filing, only the sections most relevant to business strategy and risk disclosure are analyzed: namely, Item 1 (Business), Item 1A (Risk Factors), and Item 7 (Management's Discussion and Analysis)
 
-AI disclosure is measured using two explicit AI indicators:
-
-- "AI" (case-sensitive)
-- "artificial intelligen" (capturing "artificial intelligence" and related variants)
-
-Rather than measuring sentiment across entire filings, this project extracts localized sentence windows surrounding each AI mention and applies the Loughran–McDonald financial sentiment dictionary to construct AI-specific measures of positive, negative, uncertainty, and net sentiment.
+AI disclosure is measured using two keywords: "AI" (case-sensitive), and "artificial intelligen" (capturing "artificial intelligence" and related variants).
 
 ---
 
