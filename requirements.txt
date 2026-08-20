@@ -1,0 +1,15 @@
+# Core data processing
+
+pandas>=2.2,<3.0
+numpy>=2.0,<3.0
+
+# SEC filing retrieval and parsing
+
+edgartools>=4.8
+requests>=2.32,<3.0
+beautifulsoup4>=4.12,<5.0
+lxml>=5.0,<7.0
+
+# Progress reporting
+
+tqdm>=4.66,<5.0
