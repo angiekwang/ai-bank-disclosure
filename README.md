@@ -1,11 +1,25 @@
-# Corporate Governance and AI Disclosure in U.S. Bank 10-K Filings 
+# AI Disclosure in Bank 10-K Filings 
 
-This project investigates the relationship between corporate governance and public (mandatory) disclosure of risks related to artificial intelligence (AI). 
+The scripts in this repository (updated as of August 2026) scrape 10-K filing sections from a cleaned list of publicly traded U.S. banks and perform frequency and lexicon-based sentiment analysis. 
 
-The scripts in this repository (updated as of August 2026) scrape 10-K filing sections from a cleaned list of publicly traded U.S. banks and perform frequency and lexicon-based sentiment analysis.
+# 1. Reproduction Information
+
+Clone the repository and install the required packages by running:
+
+```bash
+pip install -r requirements.txt
+```
+
+For scraping filings using EDGAR, define an SEC user agent by running:
+
+```bash
+export SEC_USER_AGENT="Your Name your.email@example.com"
+```
+
+Then, execute each script in the order listed in Section 4.
 
 
-# Background
+# 2. Background
 
 Emerging technologies create both extraordinary opportunities and significant uncertainty for firms. As these technologies become increasingly embedded in business operations, boards of directors are expected to oversee not only their strategic potential but also the risks they introduce. Artificial intelligence (AI), in particular, has the potential to improve productivity, fraud detection, customer service, and decision-making while simultaneously introducing challenges related to cybersecurity, model risk, operational resilience, regulation, and governance. Corporate governance research argues that boards of directors play a central role in overseeing these emerging strategic risks (Stulz, Tompkins, Williamson, & Ye, 2026).
 
@@ -17,7 +31,7 @@ Although motivated by artificial intelligence, the broader goal of this project 
 
 This repository contains a fully reproducible Python pipeline for constructing a research dataset of AI disclosure measures, AI-specific sentiment, and bank-year variables from SEC Form 10-K filings.
 
-# Sample Construction
+# 3. Sample Construction
 
 The initial sample is drawn from the Federal Reserve Board's "U.S. Domestically Chartered Commercial Banks" dataset. Banks with less than $2 billion in consolidated assets are excluded.
 
@@ -45,22 +59,6 @@ This repository contains the following scripts (in order):
 | prepare_lm_dictionary.py | Cleans and prepares the Loughran–McDonald financial sentiment dictionary. |
 | score_ai_sentiment.py | Computes AI-specific positive, negative, uncertainty, and net sentiment measures from keyword context windows. |
 
-
-# 5. Reproduction Information
-
-Clone the repository and install the required packages by running:
-
-```bash
-pip install -r requirements.txt
-```
-
-For scraping filings using EDGAR, define an SEC user agent by running:
-
-```bash
-export SEC_USER_AGENT="Your Name your.email@example.com"
-```
-
-Then, execute each script in the order listed in Section 4.
 
 # References
 
