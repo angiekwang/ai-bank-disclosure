@@ -2,7 +2,7 @@
 
 The scripts in this repository (updated as of August 2026) scrape 10-K filing sections from a cleaned list of publicly traded U.S. banks and perform frequency and lexicon-based sentiment analysis. 
 
-# 1. Reproduction Information
+## 1. Reproduction Information
 
 Clone the repository and install the required packages by running:
 
@@ -19,7 +19,7 @@ export SEC_USER_AGENT="Your Name your.email@example.com"
 Then, execute each script in the order listed in Section 4.
 
 
-# 2. Background
+## 2. Background
 
 Emerging technologies create both extraordinary opportunities and significant uncertainty for firms. As these technologies become increasingly embedded in business operations, boards of directors are expected to oversee not only their strategic potential but also the risks they introduce. Artificial intelligence (AI), in particular, has the potential to improve productivity, fraud detection, customer service, and decision-making while simultaneously introducing challenges related to cybersecurity, model risk, operational resilience, regulation, and governance. Corporate governance research argues that boards of directors play a central role in overseeing these emerging strategic risks (Stulz, Tompkins, Williamson, & Ye, 2026).
 
@@ -31,7 +31,7 @@ Although motivated by artificial intelligence, the broader goal of this project 
 
 This repository contains a fully reproducible Python pipeline for constructing a research dataset of AI disclosure measures, AI-specific sentiment, and bank-year variables from SEC Form 10-K filings.
 
-# 3. Sample Construction
+## 3. Sample Construction
 
 The initial sample is drawn from the Federal Reserve Board's "U.S. Domestically Chartered Commercial Banks" dataset. Banks with less than $2 billion in consolidated assets are excluded.
 
@@ -46,7 +46,7 @@ AI disclosure is measured using two keywords: "AI" (case-sensitive), and "artifi
 ---
 
 
-# 4. Repo Structure
+## 4. Repo Structure
 This repository contains the following scripts (in order):
 | Script | Purpose |
 |---------|---------|
@@ -60,7 +60,7 @@ This repository contains the following scripts (in order):
 | score_ai_sentiment.py | Computes AI-specific positive, negative, uncertainty, and net sentiment measures from keyword context windows. |
 
 
-# References
+## References
 
 Alzeghoul, A., & Alsharari, N. M. (2024). Impact of AI disclosure on financial reporting and performance: Evidence from U.S. banks. *Journal of Risk and Financial Management, 18*(1), 1–32.
 
