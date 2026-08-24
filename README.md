@@ -7,7 +7,7 @@ I queried WRDS “Bank Fundamentals Annual” database to obtain a sample of pub
 
 For each filing, I analyze Item 1 (Business), Item 1A (Risk Factors), and Item 7 (Management's Discussion and Analysis).
 
-AI disclosure is measured using two keywords: "AI" (case-sensitive), and "artificial intelligen" (capturing "artificial intelligence" and related variants). Lexicon-based sentiment analysis is conducted using the Loughran-MacDonald Financial Sentiment Library. 
+AI disclosure is measured using two keywords: "AI" (case-sensitive), and "artificial intelligen" (capturing "artificial intelligence" and related variants). Lexicon-based sentiment analysis is conducted using the Loughran-McDonald Financial Sentiment Library. 
 
 
 ## Background
