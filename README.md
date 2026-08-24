@@ -1,13 +1,13 @@
 # AI Disclosure in Bank 10-K Filings
-The scripts in this repository (updated as of August 2026) scrape 10-K filing sections from a cleaned list of publicly traded U.S. banks (and related financial institutions) and perform frequency and lexicon-based sentiment analysis. 
+The scripts in this repository (updated as of August 2026) scrape 10-K filing sections from a cleaned list of publicly traded U.S. banks (and related financial institutions) and perform frequency and lexicon-based sentiment analysis of artificial intelligence-related keywords. 
 
 ## Sample Construction
 
 I queried WRDS “Bank Fundamentals Annual” database to obtain a sample of publicly traded U.S. and North American depository institutions, commercial banks, savings institutions, and bank holding companies. 
 
-For each filing, only the sections most relevant to business strategy and risk disclosure are analyzed: namely, Item 1 (Business), Item 1A (Risk Factors), and Item 7 (Management's Discussion and Analysis).
+For each filing, I analyze Item 1 (Business), Item 1A (Risk Factors), and Item 7 (Management's Discussion and Analysis).
 
-AI disclosure is measured using two keywords: "AI" (case-sensitive), and "artificial intelligen" (capturing "artificial intelligence" and related variants). Lexicon-based sentiment analysis is conducted by using the Loughran-MacDonald Financial Sentiment Library. 
+AI disclosure is measured using two keywords: "AI" (case-sensitive), and "artificial intelligen" (capturing "artificial intelligence" and related variants). Lexicon-based sentiment analysis is conducted using the Loughran-MacDonald Financial Sentiment Library. 
 
 
 ## Background
